@@ -26,7 +26,7 @@ router.beforeEach((to,from,next) => {
   //判断是否已经登陆过
   if(isLogin()){
     //已经登陆过
-    if(to.path=="/login"){
+    if(to.path === "/login"){
       next("/index");
       NProgress.done()
     }else if(isEmpty(store.state.user)){
@@ -39,7 +39,7 @@ router.beforeEach((to,from,next) => {
         });
       }else{
         isOnline().then((res)=>{
-          if(res.status==200){
+          if(res.status === 200){
             store.dispatch('initUser', res.data).then(()=>{
               next({...to})
               NProgress.done()
@@ -75,7 +75,14 @@ new Vue({
   components: { App },
   template: '<App/>',
   created(){
+    
+    /*
+    * 在组件创建完成后，去浏览器的 sessionStorage 中检索名字为 essay
+    * 的项， 如果有 essage 项， 则触发名字是 initEssay 的 action。
+    * */
     let essay = sessionStorage.getItem("essay");
+    
+    // 将 essay 解析为对象， 然后当做 payload 传递给 action.
     this.$store.dispatch('initEssay', JSON.parse(essay));
   }
 })

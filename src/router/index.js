@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import index from '@/components/index'
 import login from '@/components/login'
 import indexmain from '@/components/indexmain'
@@ -11,6 +12,10 @@ import employee from '@/components/employee'
 import role from '@/components/role'
 import system from '@/components/system'
 Vue.use(Router)
+
+/**
+ * @desc 这个 router 匹配对象中的路由属于 login 页面
+ */
 export const constantRouterMap = [
   {
     path:'/login',
@@ -23,9 +28,14 @@ export const constantRouterMap = [
   }
 ]
 export default new Router({
+  mode: 'history',
   routes: constantRouterMap
 })
 
+/**
+ * @desc 这个 router 匹配对象中的路由属于 app 主页页面
+ *       将 app 的登录和主页分成两个部分， 主页中包含多个导航。
+ */
 export const asyncRouterMap = [
   {
     path: '/index',
