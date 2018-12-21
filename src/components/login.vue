@@ -1,8 +1,16 @@
 <template>
   <div class="login_box">
+    
+    <!-- 左侧的最大的登录标志 -->
     <div class="login_l_img"><img src="../assets/login-img.png"/></div>
+    
+    <!-- 右侧部分 -->
     <div class="login">
+      
+      <!-- 用户登录头像 -->
       <div class="login_logo"><a href="#"><img src="../assets/login_logo.png"/></a></div>
+      
+      <!-- 类似于项目的名称 -->
       <div class="login_name">
         <p>hichat后台管理系统</p>
       </div>
@@ -20,6 +28,7 @@
 
 
       </form>
+      
     </div>
   </div>
 </template>
@@ -29,6 +38,7 @@
   import {login,isOnline} from '../api/api'
   import {isEmpty} from '../util/utils'
   import $ from 'jquery'
+  
   export default {
     data() {
       return {
@@ -84,8 +94,8 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    /*padding: 0;*/
+    /*margin: 0;*/
     list-style: none;
     box-sizing: border-box;
   }

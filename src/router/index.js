@@ -14,7 +14,7 @@ import system from '@/components/system'
 Vue.use(Router)
 
 /**
- * @desc 这个 router 匹配对象中的路由属于 login 页面
+ * @desc 匹配 login 页面
  */
 export const constantRouterMap = [
   {
@@ -33,8 +33,7 @@ export default new Router({
 })
 
 /**
- * @desc 这个 router 匹配对象中的路由属于 app 主页页面
- *       将 app 的登录和主页分成两个部分， 主页中包含多个导航。
+ * @desc 匹配应用程序主页，在主页中包含多个子路由
  */
 export const asyncRouterMap = [
   {

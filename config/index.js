@@ -6,7 +6,7 @@ const path = require('path')
 
 var proxyRoute = {
   '/web': {
-    target:'http://jsonplaceholder.typicode.com/web/',
+    target:'http://jsonplaceholder.typicode.com',
     changeOrigin: true,
     pathRewrite: {
       '^/web': ''

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Axios from 'axios'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import store from './store/store'
@@ -14,6 +15,7 @@ import VCharts from 'v-charts'
 const whiteList = ['/login'] //白名单,不需要登录的路由
 Vue.use(VCharts);
 Vue.prototype.hasPerm = hasPermission;
+Vue.prototype.$http = Axios;
 Vue.use(preview,{
   closeOnScroll:false,
   closeOnVerticalDrag:false,
@@ -76,10 +78,11 @@ new Vue({
   template: '<App/>',
   created(){
     
-    /*
-    * 在组件创建完成后，去浏览器的 sessionStorage 中检索名字为 essay
-    * 的项， 如果有 essage 项， 则触发名字是 initEssay 的 action。
-    * */
+   
+    /**
+     * 在组件创建完成后，去浏览器的 sessionStorage 中检索名字为 essay
+     * 的项， 如果有 essage 项， 则触发名字是 initEssay 的 action。
+     */
     let essay = sessionStorage.getItem("essay");
     
     // 将 essay 解析为对象， 然后当做 payload 传递给 action.
